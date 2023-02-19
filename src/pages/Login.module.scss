@@ -1,0 +1,58 @@
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.logo{
+    display: flex;
+    position: absolute;
+    left: 42.15%;
+    right: 54.51%;
+    top: 8.52%;
+    bottom: 83.93%;
+
+}
+
+.recover_password {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40vh;
+}
+
+.text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+}
+
+.logo__input {
+    display: flex;
+    justify-content: center;
+}
+.input_text {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 2px solid #3C3C3C;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.get {
+    margin-top: 10px;
+}
+.get_text {
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Raleway';
+    font-style: normal;
+    background: #FE5029;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    width: 300px;
+    color: #fff;
+}
