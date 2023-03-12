@@ -1,6 +1,6 @@
-import {useForm} from "react-hook-form";
-import module from './Login.css'
+import module from './Login.module.css'
 import logo from '../assets/logo.png'
+import {useForm} from 'react-hook-form'
 
 function Login (props) {
     const {register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -9,13 +9,13 @@ function Login (props) {
         console.log(data)
     }
     return (
-        <div className ='login_block'>
+        <div className ={module.login_block}>
             <img src={logo} alt="" />
-            <div className='login_text'>Сброс пароля</div>
-            <div className="login_email">
-            <form className="form-input" onSubmit={handleSubmit(onSubmit)}>
-                    <label className="input_name" htmlFor="email">E-mail: </label>
-                    <input  type="text" name="email" placeholder="Введите почту"
+            <div className={module.login_text}>Сброс пароля</div>
+            <div className={module.login_email}>
+            <form className={module.form_input} onSubmit={handleSubmit(onSubmit)}>
+                    <label className={module.input_name} htmlFor="email">E-mail: </label>
+                    <input  type="text" name={module.email} placeholder="Введите почту"
                         {...register("email", {
                             required: "Параметр обязателен",
                             pattern: {
@@ -24,13 +24,12 @@ function Login (props) {
                             }
                         })}
                     />
-                    {errors.email && <span className="error" role="alert">{errors.email?.message}</span>}
-                <div className="regist">
+                    {errors.email && <span className={module.error} role="alert">{errors.email?.message}</span>}
+                    <div className={module.regist}>
                     <label htmlFor="submit"></label>
-                    <input className="remove-password-text" type="submit" name="submit" value="Получить код"/>
+                    <input className={module.remove_password_text} type="submit" name={module.submit} value="Получить код"/>
                 </div>
-            </form>
-
+                </form>
             </div>
         </div>
 

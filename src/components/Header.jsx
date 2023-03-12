@@ -1,41 +1,50 @@
 import React from "react";
-import module from './Header.css'
+import module from './Header.module.css'
 import {Link} from 'react-router-dom'
 import logo from '../assets/logo.png'
 import search from '../assets/search.png'
 import shop from '../assets/shop.png'
 import favorite from '../assets/favorite.png'
 import login from '../assets/login.png'
+import { useAuthState } from "react-firebase-hooks/auth"
+import { auth } from '../app/firebase'
 
 
 function Header(props) {
+    const [user] = useAuthState(auth)
+
+    const nav_links = (user)? (
+        <div className={module.nav_block}>
+            <Link to='/'>Главная</Link>
+            <Link to='/catalog'>Каталог</Link>
+            <a className={module.nav_item} href="/mainOffice">Личный кабинет</a>
+            <a className={module.nav_item} href="/main">main</a>
+        </div>
+    ) : (
+        <div className={module.nav_block}>
+            <a className={module.nav_item} href="/regist">Регистрация</a>
+            <a className={module.nav_item} href="/removePass">Сменить пароль</a>
+            <a className={module.nav_item} href="/newPass">Новый пароль</a>
+            <a className={module.nav_item} href="/authorization">Авторизация</a>
+            {/* <a className={module.nav_item} href="/main">main</a> */}
+            </div>
+        )
+
     return (
         <header>
             <nav className={module.nav}>
-                <img className="logo" src={logo}></img>
-                <div className="nav-block">
-                    <ul>
-                        <li><a className="nav-item" href="/regist">Регистрация</a></li>
-                        <li><a className="nav-item" href="/">Сменить пароль</a></li>
-                        <li><a className="nav-item" href="/newPass">Новый пароль</a></li>
-                        <li><a className="nav-item" href="/mainOffice">Личный кабинет</a></li>
-                    </ul>
-                    {/* <a className="nav-item" href="/">Сменить пароль</a>
-                    <a className="nav-item" href="/newPass">Новый пароль</a>
-                    <a className="nav-item" href="/mainOffice">Личный кабинет</a> */}
+                <img className={module.logo} src={logo}></img>
+                {nav_links}
+                <div className={module.icon}>
+                    <img className={module.nav__item} src={search}></img>
+                    <img className={module.nav__item} src={shop}></img>
+                    <img className={module.nav__item} src={favorite}></img>
+                    <Link to="/regist"><img className={module.nav__item} src={login}></img></Link>
                 </div>
-                <div className="icon">
-                    <img className="icon-item" src={search}></img>
-                    <img className="icon-item" src={shop}></img>
-                    <img className="icon-item" src={favorite}></img>
-                    <Link to="/regist"><img className="icon-item" src={login}></img></Link>
-                </div>
-                <div className="burger">
-                    <span></span>
-                {/* <i class="fa-solid fa-bars"></i> */}
+                <div className= {module.burger}>
+                <i class="fa-solid fa-bars"></i>
                 </div>
             </nav>
-            
         </header>
 
         // <header className='header'>
@@ -52,20 +61,5 @@ function Header(props) {
         // </header>
     );
 }
-// document.querySelector('.burger').addEventListener('click', function() {
-//     this.classList.add('open');
-//     // document.querySelector('nav-block').classList.toggle('open')
-// })
-
-// const burger = document.querySelector('.burger')
-// const open = document.querySelector('.nav-block')
-
-// burger.addEventListener('click', () => {
-//     open.classList.add ('.open')
-//     // this.classList.toggle('active');
-//     // document.querySelector('nav-block').classList.toggle('open')
-// } )
-
-
 
 export default Header;

@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import React from 'react';
-import module from './NewPassword.css'
+import module from './NewPassword.module.css'
 import logo from '../assets/logo.png'
 
 
@@ -14,12 +14,11 @@ function NewPassword (props) {
     }
     return (
 
-        <div className="login_block">
-            <img className="newPass_logo" src={logo}></img>
-            <div className="newPass_text">Создайте новый пароль</div>
-            <form className={module.form} onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-input">
-                    <input className="newPass_input"
+        <div className={module.login_block}>
+            <img className={module.newPass_logo} src={logo}></img>
+            <div className={module.newPass_text}>Создайте новый пароль</div>
+            <div className={module.newPass_input}>
+                    <input 
                         type="password" 
                         name="password" 
                         placeholder="Введите пароль"
@@ -31,9 +30,9 @@ function NewPassword (props) {
                             }
                         })}
                     />
-                    {errors.password && <span className="error" role="alert">{errors.password?.message}</span>}
+                    {errors.password && <span className={module.error} role="alert">{errors.password?.message}</span>}
                 </div>
-                <div className="form-input" onSubmit={handleSubmit(onSubmit)}>
+                <div className={module.form_input}>
                     <input 
                         type="password" 
                         name="cpassword" 
@@ -47,14 +46,12 @@ function NewPassword (props) {
                             required: 'Параметр обязателен'
                         })}
                     />
-                    {errors.cpassword && <span className="error" role="alert">{errors.cpassword?.message}</span>}
+                    {errors.cpassword && <span className={module.error} role="alert">{errors.cpassword?.message}</span>}
                 </div>
-                <div className="regist">
+                <div className={module.regist}>
                     <label htmlFor="submit"></label>
-                    <input className="regist-text" type="submit" name="submit" value="Зарегистрироваться"/>
+                    <input className={module.regist_text} type="submit" name={module.submit} value="Зарегистрироваться"/>
                 </div>
-            </form>
-            
         </div>
     )
 }
