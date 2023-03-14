@@ -1,0 +1,98 @@
+.text{
+    display: flex;
+    padding: 0 50px;
+}
+.block{
+    padding: 50px 100px;
+}
+.karta{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+height: 80px;
+
+background: #AAA8CF;
+border: 1px solid #9F9F9F;
+border-radius: 45px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+color: #FFFFFF;
+padding: 0 30px;
+}
+
+.h3{
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+}
+.h1{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 47px;
+
+color: #AAA8CF;
+}
+.up{
+display: flex;
+flex-direction: column;
+padding-left:15px ;
+padding-top: 10px;
+}
+
+.kol{
+    display: flex;
+    width: 164.33px;
+height: 59px;
+left: 745px;
+top: 338px;
+
+background: #FFFFFF;
+border: 1px solid #9F9F9F;
+border-radius: 10px;
+
+    
+}
+.kol h3{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+display: flex;
+justify-content: center ;
+}
+.like{
+    display: flex;
+    padding-top:30px ;
+}
+.likes{
+    margin: 0 20px;
+}
+.kor{
+    width: 251px;
+height: 59px;
+left: 745px;
+top: 424px;
+
+background: #FFFFFF;
+border: 1px solid #9F9F9F;
+border-radius: 10px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+
+color: #000000;
+margin: 20px 0;
+}
+
+
+

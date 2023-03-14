@@ -11,6 +11,7 @@ import NewPassword from './pages/NewPassword'
 import MainOffice from './pages/MainOffice'
 import Authorization from './pages/Authorization'
 import Main from './pages/Main'
+import Tovar from './pages/Tovar'
 // import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/mainOffice' element ={<MainOffice />}/>
         <Route path='/authorization' element ={<Authorization />}/>
         <Route path='/main' element ={<Main />}/>
+        <Route path='/tovar' element ={<Tovar />}/>
       </Routes>
       {/* <Login /> */}
       <Footer />

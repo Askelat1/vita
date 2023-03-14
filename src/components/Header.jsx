@@ -26,6 +26,7 @@ function Header(props) {
             <a className={module.nav_item} href="/removePass">Сменить пароль</a>
             <a className={module.nav_item} href="/newPass">Новый пароль</a>
             <a className={module.nav_item} href="/authorization">Авторизация</a>
+            <a className={module.nav_item} href="/tovar">Главная</a>
             {/* <a className={module.nav_item} href="/main">main</a> */}
             </div>
         )
@@ -41,8 +42,18 @@ function Header(props) {
                     <img className={module.nav__item} src={favorite}></img>
                     <Link to="/regist"><img className={module.nav__item} src={login}></img></Link>
                 </div>
-                <div className= {module.burger}>
+                <div className={module.burger}>
                 <i class="fa-solid fa-bars"></i>
+                {/* <div className={module.burger_nav}>
+                    <div className={module.burger_text}>
+                        <ul>
+                            <li>Главная</li>
+                            <li>Каталог</li>
+                            <li>Товары</li>
+                            <li>О нас</li>
+                        </ul>
+                    </div>
+                </div> */}
                 </div>
             </nav>
         </header>
