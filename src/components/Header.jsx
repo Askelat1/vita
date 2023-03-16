@@ -15,18 +15,23 @@ function Header(props) {
 
     const nav_links = (user)? (
         <div className={module.nav_block}>
-            <Link to='/'>Главная</Link>
-            <Link to='/catalog'>Каталог</Link>
+            <a className={module.nav_item} href="/tovar">Главная</a>
+            <a className={module.nav_item} href="/tovar">Товары</a>
+            <a className={module.nav_item} href="/tovar">Корзина</a>
+            {/* <Link to='/'>Главная</Link> */}
+            {/* <Link to='/catalog'>Каталог</Link> */}
             <a className={module.nav_item} href="/mainOffice">Личный кабинет</a>
             <a className={module.nav_item} href="/main">main</a>
         </div>
     ) : (
         <div className={module.nav_block}>
-            <a className={module.nav_item} href="/regist">Регистрация</a>
-            <a className={module.nav_item} href="/removePass">Сменить пароль</a>
-            <a className={module.nav_item} href="/newPass">Новый пароль</a>
-            <a className={module.nav_item} href="/authorization">Авторизация</a>
+            {/* <a className={module.nav_item} href="/regist">Регистрация</a> */}
+            {/* <a className={module.nav_item} href="/removePass">Сменить пароль</a> */}
+            {/* <a className={module.nav_item} href="/newPass">Новый пароль</a> */}
             <a className={module.nav_item} href="/tovar">Главная</a>
+            <a className={module.nav_item} href="/tovar">Товары</a>
+            <a className={module.nav_item} href="/tovar">Корзина</a>
+            <a className={module.nav_item} href="/authorization">Авторизация</a>
             {/* <a className={module.nav_item} href="/main">main</a> */}
             </div>
         )

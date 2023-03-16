@@ -21,6 +21,7 @@ const ProductPage = (props) => {
     return (
         <div>
             <Header />
+            <p>fcwsf</p>
             <div className="product">
             <div className="back"><Link to={'/catalog'}>Вернуться назад</Link></div>
                 <div className="product-info">

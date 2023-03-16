@@ -10,7 +10,7 @@ header {
 }
 
 nav {
-    background-color: orange;
+    /* background-color: orange; */
     display: flex;
     justify-content: space-around;
     align-items: center;
