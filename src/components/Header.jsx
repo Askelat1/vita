@@ -48,7 +48,7 @@ function Header(props) {
                     <img className={module.nav__item} src={favorite}></img>
                     <Link to="/regist"><img className={module.nav__item} src={login}></img></Link>
                 </div>
-                {/* <div className={module.burger}>
+                <div className={module.burger}>
                 <i class="fa-solid fa-bars"></i>
                 <div className={module.burger_nav}>
                     <div className={module.burger_text}>
@@ -60,7 +60,7 @@ function Header(props) {
                         </ul>
                     </div>
                 </div>
-                </div> */}
+                </div>
             </nav>
         </header>
 
