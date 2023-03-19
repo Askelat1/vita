@@ -84,7 +84,6 @@ function Tovar (props) {
                     </h3>
                 </div>
                 <button className={module.button}>Оформить заказ</button>
-                <button className={module.button}>Оформить заказ</button>
             </div>
         </div>
         </div>
