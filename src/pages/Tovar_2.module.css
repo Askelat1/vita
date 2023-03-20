@@ -283,5 +283,8 @@ color: #FFFFFF;
     }
     .infor {
         font-size: 11px;
+    } .kol_box {
+        width: 80px;
+        height: 30px;
     }
 }
