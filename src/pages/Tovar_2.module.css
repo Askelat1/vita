@@ -105,7 +105,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    /* line-height: 29px; */
+    
     color: #000000;
     display: flex;
     justify-content: center ;
@@ -129,7 +129,6 @@
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    /* line-height: 18px; */
 
     color: #FFFFFF;
     width: 202px;
@@ -270,9 +269,19 @@ color: #FFFFFF;
         width: 150px;
         height: 150px;
     }
+    .cont_1_img {
+        width: 140px;
+        height: 140px;
+    }
 
     .cont_2 {
         width: 200px;
         height: 100px;
+    }
+    .cont_2_text {
+        font-size: 12px;
+    }
+    .infor {
+        font-size: 11px;
     }
 }
