@@ -33,8 +33,16 @@ function Tovar_2 (props) {
                             <img className={module.icon_like} src={like}></img>
                             <img className={module.icon_shop} src={shop}></img>
                         </div>
+                        
                     </div>
+                    <div className={module.form}>
+                        <div className={module.karta2}>
+                            <button className={module.karta}>оформить сейчас <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                </div>
+                
             </div>
+            
             {/* <div className={module.text}>
             <img className={module.vita} src={vita} />
             <div className={module.block}>
