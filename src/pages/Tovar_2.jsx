@@ -1,6 +1,8 @@
 import module from './Tovar_2.module.css'
 import React from 'react';
-import vita from '../assets/vitamin.png'
+import vita from '../assets/vin1.png'
+import fon from '../assets/fon.png'
+
 
 function Tovar_2 (props) {
 
@@ -31,9 +33,10 @@ function Tovar_2 (props) {
                 <button className={module.karta}>оформить сейчас <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
-            
+            {/* <img src={fon}  /> */}
         </div>
         </div>
+        
 
     )
 }

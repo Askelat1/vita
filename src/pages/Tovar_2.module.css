@@ -1,3 +1,6 @@
+.fon {
+    background: url(../assets/fon.png);
+}
 .text{
     display: flex;
     padding: 0 50px;
@@ -26,7 +29,7 @@ height: 37px;
 left: 791px;
 top: 606px;
 
-background: #AAA8CF;
+background: #AAA8CF; 
 border: 1px solid #9F9F9F;
 border-radius: 10px;
 }
@@ -43,7 +46,7 @@ font-weight: 600;
 font-size: 40px;
 line-height: 47px;
 
-color: #AAA8CF;
+/* color: #AAA8CF; */
 }
 .up{
 display: flex;
@@ -86,14 +89,16 @@ justify-content: center ;
 }
 
 .vita{
-    width: 45%;
-    height: 45%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 229px;
+    height: 281px;
 }
 
 
 .p{
     margin-top: 20px ;
-    background-color: #AAA8CF;
+    /* background-color: #AAA8CF; */
     border-radius: 20px;
     width: 430px;
 }
