@@ -1,50 +1,10 @@
 import module from './Tovar_2.module.css'
 import React from 'react';
-import vita from '../assets/vin1.png'
+import vita1 from '../assets/vin1.png'
 import fon from '../assets/fon.png'
+import like from '../assets/love.png'
+import shop from '../assets/shop_2.png'
 
-// theme.addEventListener('change', e => {
-//         if(e.target.value !== 'custom') {
-//             body.style.background = e.target.value
-//             localStorage.setItem('bgColor' , e.target.value)
-//         }else if(e.target.value === 'custom') {
-//             const color = prompt('Ведите цвет')
-//             body.style.background = color
-//             localStorage.setItem('bgColor', color)
-//         } else {
-//             localStorage.setItem('bgColor', e.target.value)
-//         }
-//         localStorage.setItem('bgColor', e.target.value)
-//     })
-    
-    
-//     function temp(tittle, id, completed) {
-//         return `
-//         <div class="box ${completed ? 'completed' : ''}" >
-//         <h1>${tittle}</h1>
-//         <div>
-//         <i class="fa-solid fa-pencil" onclick = "editTodo(${id})"></i>
-//         <i class="fa-solid fa-trash" onclick = "removeTodo(${id})"></i>
-//         <i class="fa-solid fa-check" onclick = "doneTodo(${id})"></i>
-//         </div>
-//         </div>
-//         `
-//     }
-    
-//     document.addEventListener('DOMContentLoaded', () => {
-//         if (localStorage.getItem('bgColor')) {
-//             const bgColor = localStorage.getItem('bgColor')
-//             document.body.style.backgroundColor = localStorage.getItem('bgColor')
-//             theme.value = bgColor
-//         }
-    
-//         if(JSON.parse(localStorage.getItem('arr'))) {
-//             const dataBase= JSON.parse(localStorage.getItem('arr'))
-//             dataBase.forEach(item => {
-//                 container.insertAdjacentHTML('afterbegin', temp(item.tittle, item.id, item.completed))
-//             })
-//         }
-//     })
 
 function Tovar_2 (props) {
 
@@ -61,7 +21,28 @@ function Tovar_2 (props) {
                         <div className={module.infor}>подробнее</div>
                     </div>
                 </div>
+                <div className={module.kol}>
+                        <div className={module.kol_box}>
+                            <h3 className={module.h3}>кол-во:</h3>
+                            <div className={module.up}>
+                                <i class="fa-solid fa-angle-up"></i>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div className={module.icon}>
+                            <img className={module.icon_like} src={like}></img>
+                            <img className={module.icon_shop} src={shop}></img>
+                        </div>
+                        
+                    </div>
+                    <div className={module.form}>
+                        <div className={module.karta2}>
+                            <button className={module.karta}>оформить сейчас <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                </div>
+                
             </div> */}
+            
             <div className={module.text}>
             <img className={module.vita} src={vita} />
             <div className={module.block}>
