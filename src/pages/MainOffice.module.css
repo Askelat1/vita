@@ -51,7 +51,7 @@
     cursor: pointer;
     width: 350px;
     height: 49px;
-    background-color: orangered;
+    background-color: #AAA8CF;
     border-radius: 5px;
     border: none;
 
@@ -81,7 +81,7 @@ font-size: 15px;
 line-height: 18px;
 text-align: center;
 color: #FFFFFF;
-background: #FE5029;
+background: #AAA8CF;
 border-radius: 10px;
 display: flex;
 margin: 15px    auto;
