@@ -15,6 +15,7 @@ const Authorization = (props) => {
     async function signInWithGoogle() {
         try {
             await signInWithPopup(auth, provider)
+            navigateTo('/main/art')
             props.closeModal({ type: "modal", active:"false"})
         } catch (error) {
             console.log(error)

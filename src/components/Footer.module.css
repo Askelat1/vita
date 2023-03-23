@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-around;
     padding-top: 50px;
-    background: green;
+    /* background: green; */
     margin-top: 20px;
 }
 .line{
@@ -12,8 +12,7 @@
     left: 499px;
     top: 74px;
 
-    background: #D9D9D9;
-}
+    background: #333}
 .h3{
     font-family: 'Raleway';
     font-style: normal;
@@ -22,7 +21,7 @@
     line-height: 18px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #333;
     padding: 10px 0;
 }
 .h3_tittle{
@@ -34,7 +33,7 @@
     line-height: 18px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #333;
     padding: 10px 0;
 }
 .footer_2{
@@ -57,10 +56,14 @@
     line-height: 18px;
     text-align: center;
 
-    color: #FFFFFF;
+    color: #333;
+}
+.footer_2 a  {
+    color: #333;
 }
 .icons i{
     margin-right: 10px;
+    color: #333;
 }
 
     @media (max-width: 900px) {
