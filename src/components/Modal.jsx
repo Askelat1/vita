@@ -1,5 +1,7 @@
 import Authorization from "../pages/Authorization";
 import Registration from "../pages/Registration";
+import MainOffice from '../pages/MainOffice'
+
 
 const Modal = (props) => {
     const modal = props?.modal?.props
@@ -8,6 +10,8 @@ const Modal = (props) => {
         switch(param) {
             case 'authorization':
                 return <Authorization closeModal={props?.modal?.dispatch} />;
+            case 'mainOffice':
+                return <MainOffice closeModal={props?.modal?.dispatch} />;
             case 'registration':
                 return <Registration closeModal={props?.modal?.dispatch}/>;
             default:
