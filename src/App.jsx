@@ -13,6 +13,7 @@ import Authorization from './pages/Authorization'
 import Main from './pages/Main'
 import Tovar from './pages/Tovar'
 import Tovar_2 from './pages/Tovar_2'
+import Katolog from './pages/Katolog'
 
 // import './App.css'
 
@@ -32,6 +33,7 @@ function App() {
         <Route path='/main' element ={<Main />}/>
         <Route path='/tovar' element ={<Tovar />}/>
         <Route path='/tovar_2' element ={<Tovar_2 />}/>
+        <Route path='/katolog' element ={<Katolog />}/>
       </Routes>
       {/* <Login /> */}
       <Footer />

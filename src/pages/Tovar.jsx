@@ -25,9 +25,9 @@ function Tovar (props) {
 30 капсул</h2>
                 </div>
                 <div className={module.plus}>
-                <i class="fa-solid fa-minus"></i>
+                <div className={module.krug}><i class="fa-solid fa-minus"></i></div>
                     <h4 className={module.h4}>1</h4>
-                <i class="fa-solid fa-plus"></i>
+                <div className={module.krug}><i class="fa-solid fa-plus"></i></div>
                 </div>
                 <div><h3 className={module.h3}>850 сом</h3></div>
                 </div>
@@ -47,9 +47,9 @@ function Tovar (props) {
                 </div>
             
                 <div className={module.plus}>
-                <i class="fa-solid fa-minus"></i>
+                <div className={module.krug}><i class="fa-solid fa-minus"></i></div>
                     <h4 className={module.h4}>1</h4>
-                <i class="fa-solid fa-plus"></i>
+                    <div className={module.krug}><i class="fa-solid fa-plus"></i></div>
     
                 </div>
                 <div><h3 className={module.h3}>1800 сом</h3></div></div>
@@ -65,9 +65,9 @@ function Tovar (props) {
 Витамины для волос
 60 капсул</h2></div>
 <div className={module.plus}>
-                <i class="fa-solid fa-minus"></i>
+<div className={module.krug}><i class="fa-solid fa-minus"></i></div>
                     <h4 className={module.h4}>1</h4>
-                <i class="fa-solid fa-plus"></i>
+                    <div className={module.krug}><i class="fa-solid fa-plus"></i></div>
     
                 </div>
                 

@@ -18,7 +18,9 @@ function Header(props) {
             <a className={module.nav_item} href="/tovar">Главная</a>
             <a className={module.nav_item} href="/tovar_2">Товары</a>
             <a className={module.nav_item} href="/tovar">Корзина</a>
-            {/* <a className={module.nav_item} href="/mainOffice">Личный кабинет</a> */}
+            {/* <Link to='/'>Главная</Link> */}
+            {/* <Link to='/catalog'>Каталог</Link> */}
+            <a className={module.nav_item} href="/mainOffice">Личный кабинет</a>
             <a className={module.nav_item} href="/main">main</a>
         </div>
     ) : (
@@ -26,8 +28,12 @@ function Header(props) {
             {/* <a className={module.nav_item} href="/regist">Регистрация</a> */}
             {/* <a className={module.nav_item} href="/removePass">Сменить пароль</a> */}
             {/* <a className={module.nav_item} href="/newPass">Новый пароль</a> */}
-            {/* <a className={module.nav_item} href="/authorization">Авторизация</a> */}
-            <a className={module.nav_item} href="/mainOffice">Личный кабинет</a>
+            <a className={module.nav_item} href="/tovar">Главная</a>
+            <a className={module.nav_item} href="/tovar_2">Товары</a>
+            {/* <a className={module.nav_item} href="/tovar">Товары</a> */}
+            <a className={module.nav_item} href="/tovar">Корзина</a>
+            <a className={module.nav_item} href="/katolog">Каталог</a>
+            <a className={module.nav_item} href="/authorization">Авторизация</a>
             {/* <a className={module.nav_item} href="/main">main</a> */}
             </div>
         )
@@ -41,7 +47,7 @@ function Header(props) {
                     <img className={module.nav__item} src={search}></img>
                     <img className={module.nav__item} src={shop}></img>
                     <img className={module.nav__item} src={favorite}></img>
-                    <Link to="/mainOffice"><img className={module.nav__item} src={login}></img></Link>
+                    <Link to="/regist"><img className={module.nav__item} src={login}></img></Link>
                 </div>
                 <div className={module.burger}>
                 <i class="fa-solid fa-bars"></i>

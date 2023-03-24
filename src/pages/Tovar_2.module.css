@@ -8,6 +8,10 @@
     text-align: center;
 }
 
+.icon_like{
+    padding: 2px 0 0  5px;
+}
+
 .block {
     width: 855px;
     height: 359px;
@@ -138,6 +142,7 @@
     background: #AAA8CF; 
     border: 1px solid #9F9F9F;
     border-radius: 10px;
+    margin-right: 50px;
 }
 /* 
 .icon {
