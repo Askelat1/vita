@@ -3,29 +3,75 @@ import Footer from "../components/Footer"
 import {useState, useEffect} from "react"
 import CardComponent from "../components/CardComponent"
 import module from "./Catalog.module.css"
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { collection, query, getDocs } from "firebase/firestore";
+import { database } from "../app/firebase";
+import {Link} from 'react-router-dom'
 
 const Catalog = (props) => {
     const [products, setProducts] = useState([])
+    const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch('http://66.42.79.23:9005/?format=openapi')
-            .then(res=>res.json())
-            .then(json => {
-                setProducts(json);
-            })
+        getData();
     }, [])
 
-    const showAllProducts = products.map((product, index) => {
-        console.log(product)
-        return <CardComponent key={index} cardInfo={product} />
+    console.log(categories)
+
+    async function getData() {
+        const q = query(collection(database, "category"));
+        const querySnapshot = await getDocs(q);
+        let category = []
+        querySnapshot.forEach((doc) => {
+            category.push({...doc.data(), id: doc.id})
+            console.log(doc.id)
+        });
+        setCategories(category)
+    }
+
+    /*const showAllProducts = products.map((product, index) => {
+        return (
+            <Card text="123123">
+                <Card.Img variant="top" src={product.image} />
+                <Card.Body>
+                    <Card.Title>{console.log(product)}</Card.Title>
+                    <Card.Text>
+                    {product.description}
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                    <small className="text-muted">{product.price}$</small>
+                </Card.Footer>
+            </Card>
+        )
+    })*/
+
+    const showAllCategory = categories.map((category, index) => {
+        return (
+            <Link to={`/category/${category.id}`}>
+                <Card text="123123" key={index}>
+                    <Card.Img variant="top" src={category?.image} />
+                    <Card.Body>
+                        <Card.Title>{category.name}</Card.Title>
+                        <Card.Text>
+                            {category.description}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+            </Link>
+        )
     })
     
     return (
         <div>
             <Header />
-            <div className={module.containerCenter_flex}>
-                <div className={module.catalog_list}>
-                    {showAllProducts}
+            <div>
+                <div>
+                    {/*showAllProducts*/}
+                    <CardGroup>
+                        {showAllCategory}
+                    </CardGroup>
                 </div>
             </div>
             <Footer />

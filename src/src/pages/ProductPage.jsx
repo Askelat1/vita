@@ -10,20 +10,23 @@ const ProductPage = (props) => {
 
     useEffect(() => {
         fetch(`https://fakestoreapi.com/products/${id}`)
-            .then(res=>res.json())
-            .then(json => {
-                setProduct(json)
-            })
+        .then(res => res.json())
+        .then(json => {
+            setProduct(json)
+        })
+        .catch(err => {
+            console.log(err);
+        })
     }, [])
+    
 
     console.log(product)
 
     return (
         <div>
-            <Header />
-            <p>fcwsf</p>
+            {/* <Header /> */}
             <div className="product">
-            <div className="back"><Link to={'/catalog'}>Вернуться назад</Link></div>
+                <div className="back"><Link to={'/catalog'}>Вернуться назад</Link></div>
                 <div className="product-info">
                     <div className="product-image">
                         <img src={product?.image} alt="" />
@@ -46,7 +49,7 @@ const ProductPage = (props) => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 };
