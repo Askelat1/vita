@@ -24,7 +24,6 @@ import fon2 from '../assets/fon2.png'
 function Katolog (props) {
 
     return (       
-                 
         <div className={module.block}>
             <div className={module.fons}>
                 <h2 className={module.h3}>Избранные</h2>

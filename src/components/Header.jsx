@@ -15,12 +15,15 @@ function Header(props) {
 
     const nav_links = (user)? (
         <div className={module.nav_block}>
-            <a className={module.nav_item} href="/tovar">Главная</a>
-            <a className={module.nav_item} href="/tovar_2">Товары</a>
+            {/* <a className={module.nav_item} href="/tovar_2">Товары</a> */}
+            {/* <Link to="/content">Главная</Link> */}
+            <a className={module.nav_item} href="/">Главная</a>
+            <a className={module.nav_item} href="/catalog">Каталог</a>
             <a className={module.nav_item} href="/tovar">Корзина</a>
-            {/* <a className={module.nav_item} href="/mainOffice">Личный кабинет</a> */}
-            <a className={module.nav_item} href="/main">main</a>
+            {/* <a className={module.nav_item} href="/category">Ко</a> */}
+            {/* <a className={module.nav_item} href="/productPage">Товары</a> */}
         </div>
+        
     ) : (
         <div className={module.nav_block}>
             {/* <a className={module.nav_item} href="/regist">Регистрация</a> */}
@@ -30,23 +33,42 @@ function Header(props) {
             <a className={module.nav_item} href="/mainOffice">Личный кабинет</a>
             {/* <a className={module.nav_item} href="/main">main</a> */}
         </div>
-        )
+        );
 
-        
-
-    return (
-        <header>
-            <nav className={module.nav}>
-                <img className={module.logo} src={logo}></img>
-                {nav_links}
+        const nav_icons = (user)? (
+            <nav className={module.nav}>                
+                <div className={module.icon}>
+                    <img className={module.nav__item} src={search}></img>
+                    <img className={module.nav__item} src={shop}></img>
+                    <img className={module.nav__item} src={favorite}></img>
+                    <Link to="/main"><img className={module.nav__item} src={login}></img></Link>
+                </div>
+            </nav>
+        ) : (
+            <nav className={module.nav}>                
                 <div className={module.icon}>
                     <img className={module.nav__item} src={search}></img>
                     <img className={module.nav__item} src={shop}></img>
                     <img className={module.nav__item} src={favorite}></img>
                     <Link to="/mainOffice"><img className={module.nav__item} src={login}></img></Link>
                 </div>
+            </nav>
+        )
+
+    return (
+        <header>
+            <nav className={module.nav}>
+                <img className={module.logo} src={logo}></img>
+                {nav_links}
+                {nav_icons}
+                {/* <div className={module.icon}>
+                    <img className={module.nav__item} src={search}></img>
+                    <img className={module.nav__item} src={shop}></img>
+                    <img className={module.nav__item} src={favorite}></img>
+                    <Link to="/mainOffice"><img className={module.nav__item} src={login}></img></Link>
+                </div> */}
                 <div className={module.burger}>
-                <i class="fa-solid fa-bars"></i>
+                {/* <i class="fa-solid fa-bars"></i> */}
                 <div className={module.burger_nav}>
                     <div className={module.burger_text}>
                         <ul>
