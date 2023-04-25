@@ -3,6 +3,7 @@ import Main from '../pages/Main.jsx'
 import Catalog from '../pages/Catalog'
 import ProductPage from '../pages/ProductPage'
 import Category from "../pages/Category.jsx";
+import Cart from '../pages/Cart'
 
 const path = (import.meta.env.PROD)? '/shop-template' : ''
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
                 <Category />
             </div>
         )
+    },
+    {
+        path: `/cart`,
+        element: <Cart />
     }
 ]);
 

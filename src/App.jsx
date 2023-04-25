@@ -1,5 +1,7 @@
-import { useState } from 'react'
+import {useState, createContext, useEffect } from 'react'
 import{Routes, Route,  Link} from 'react-router-dom'
+import {RouterProvider} from 'react-router-dom'
+import router from './app/index.jsx'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
@@ -20,34 +22,53 @@ import Category from './pages/Category'
 import Content from './components/Content'
 
 // import './App.css'
+const ContextBox = createContext()
+export {ContextBox}
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [box, setBox] = useState([])
+
+  useEffect(() => {
+    if (box.length != 0)
+      localStorage.setItem('box', JSON.stringify(box))
+  }, [box])
+
+  useEffect(() => {
+    let basket = localStorage.getItem('box')? localStorage.getItem('box') : '[]'
+    let parseBasket = JSON.parse(basket)
+    setBox(parseBasket)
+  }, [])
+
+  console.log(box)
 
   return (
     <div className="App">/
-      <Header />
-
-      {/* <Content /> */}
+      <ContextBox.Provider value={[box, setBox]}>
+        {/* <RouterProvider
+          router={router}
+        /> */}
       
-      <Routes>
-        <Route path='/regist' element ={<Registration />}/>
-        <Route path='/removePass' element ={<Login />}/>
-        <Route path='/newPass' element ={<NewPassword />}/>
-        <Route path='/mainOffice' element ={<MainOffice />}/>
-        <Route path='/authorization' element ={<Authorization />}/>
-        <Route path='/main' element ={<Main />}/>
-        <Route path='/tovar' element ={<Tovar />}/>
-        <Route path='/tovar_2' element ={<Tovar_2 />}/>
-        <Route path='/katolog' element ={<Katolog />}/>
-        <Route path='/productPage' element ={<ProductPage />}/>
-        <Route path='/catalog' element ={<Catalog />}/>
-        <Route path='/category/:category' element ={<Category />}/>
-        <Route path='/content' element ={<Content />}/>
-      </Routes>
-      {/* <Login /> */}
-      <Footer />
-    
+        <Header />
+        <Routes>
+
+          <Route path='/regist' element ={<Registration />}/>
+          <Route path='/removePass' element ={<Login />}/>
+          <Route path='/newPass' element ={<NewPassword />}/>
+          <Route path='/mainOffice' element ={<MainOffice />}/>
+          <Route path='/authorization' element ={<Authorization />}/>
+          <Route path='/main' element ={<Main />}/>
+          <Route path='/tovar' element ={<Tovar />}/>
+          <Route path='/tovar_2' element ={<Tovar_2 />}/>
+          <Route path='/katolog' element ={<Katolog />}/>
+          <Route path='/productPage' element ={<ProductPage />}/>
+          <Route path='/catalog' element ={<Catalog />}/>
+          <Route path='/category/:category' element ={<Category />}/>
+          <Route path='/content' element ={<Content />}/>
+        </Routes>
+        {/* <Login /> */}
+        <Footer />
+      </ContextBox.Provider>
     </div>
 
   )

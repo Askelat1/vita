@@ -47,7 +47,7 @@ const Catalog = (props) => {
         return (
             <CardGroup className={module.card_group}>
             <Card   text="1" key={index}>
-                <Card.Img className= {module.card_img} variant="top" src={product.photo} />
+                <Card.Img className= {module.card_img} variant="top" src={product?.photo} />
                 <Card.Body>
                     <div className={module.card_info}>
                     <Card.Title className={module.name}>{product.name}</Card.Title>
@@ -76,7 +76,7 @@ const Catalog = (props) => {
                 <Card text="123123" key={id}>
                     <Card.Body>
                         <Card.Title></Card.Title>
-                        <Card.Text>
+                        <Card.Text className={module.a}>
                         {categories.name}
                         </Card.Text>
                     </Card.Body>
