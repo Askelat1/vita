@@ -20,6 +20,9 @@ import ProductPage from './pages/ProductPage'
 import Catalog from './pages/Catalog'
 import Category from './pages/Category'
 import Content from './components/Content'
+import Korzina from './pages/Korzina'
+import Kabinet from './pages/Kabinet'
+import MainPages from './pages/MainPages'
 
 // import './App.css'
 const ContextBox = createContext()
@@ -65,6 +68,9 @@ function App() {
           <Route path='/catalog' element ={<Catalog />}/>
           <Route path='/category/:category' element ={<Category />}/>
           <Route path='/content' element ={<Content />}/>
+          <Route path='/korzina' element ={<Korzina />}/>
+          <Route path='/kabinet' element ={<Kabinet />}/>
+          <Route path='/' element ={<MainPages />}/>
         </Routes>
         {/* <Login /> */}
         <Footer />
