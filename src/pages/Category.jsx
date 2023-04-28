@@ -7,6 +7,7 @@ import { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import {ContextBox} from '../App'
+import { set } from 'react-hook-form';
 
 
 const Category = (props) => {

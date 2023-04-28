@@ -23,6 +23,7 @@ import Content from './components/Content'
 import Korzina from './pages/Korzina'
 import Kabinet from './pages/Kabinet'
 import MainPages from './pages/MainPages'
+import Cart from './pages/Cart'
 
 // import './App.css'
 const ContextBox = createContext()
@@ -71,6 +72,7 @@ function App() {
           <Route path='/korzina' element ={<Korzina />}/>
           <Route path='/kabinet' element ={<Kabinet />}/>
           <Route path='/' element ={<MainPages />}/>
+          <Route path='/cart' element ={<Cart />}/>
         </Routes>
         {/* <Login /> */}
         <Footer />

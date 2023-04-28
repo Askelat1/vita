@@ -7,10 +7,14 @@
     
 }
 .block2{
-    display: flex;
+    display: block;
     justify-content: space-between;
     padding: 20px 0;
     
+}
+.block_img {
+    width: 10%;
+    height: 10%;
 }
 .block3{
     display: flex;
