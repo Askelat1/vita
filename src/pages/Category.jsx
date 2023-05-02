@@ -1,4 +1,4 @@
-import module from './Category.module.css'
+import  './Category.css'
 import { useParams } from "react-router-dom";
 import { useEffect, useContext} from "react";
 import { collection, query, getDocs, where } from "firebase/firestore";
@@ -60,54 +60,30 @@ const Category = (props) => {
         return (
             <Card text="1" key={index}>
                 <div className="id-card" data-id={product.id}></div>
-                <Card.Img className= {module.card_img} variant="top" src={product?.photo} />
+                <Card.Img className= "card_img" variant="top" src={product?.photo} />
                 <Card.Body>
-                    <div className={module.card_info}>
-                    <Card.Title className={module.name}>{product.name}</Card.Title>
-                    <div className='price-product'>{product.price}сом</div>
+                    <div className="card_info">
+                    <Card.Title className="name">{product.name}</Card.Title>
+                    <div className='price-product'>{product.price} сом</div>
                     </div>
-                    {/* <Card.Title className={module.name}>{product.name}</Card.Title> */}
-                    {/* <Card.Text>
-                    {product.description}
-                    </Card.Text> */}
                 </Card.Body>
                 <Card.Footer>
                     <div>
-                    <i class="fa-solid fa-arrow-right" className={module.archer}></i>
-                    <button onClick={addToCart} className={module.but}>оформить сейчас</button>
-                    {/* <div><button onClick={addToCart}>Добавить в корзину</button></div> */}
+                    <i class="fa-solid fa-arrow-right" className="archer"></i>
+                    <button onClick={addToCart} className="but">оформить сейчас</button>
                     </div>
-                    {/* <small className="text-muted">{product.price}сом</small> */}
                 </Card.Footer>
             </Card>
         )
     })
 
-    // const viewProducts = products.map((product, index) => {
-    //     return (
-    //         <Card text="123123" key={index}>
-    //             <div className="id-card" data-id={product.id}></div>
-    //             <Card.Img variant="top" src={product.photo} />
-    //             <Card.Body>
-    //                 <Card.Title>{product.name}</Card.Title>
-    //                 <Card.Text>
-    //                 {product.description}
-    //                 </Card.Text>
-    //             </Card.Body>
-    //             <Card.Footer>
-    //                 <small className="text-muted"><span className="price-product">{product.price}</span>$</small>
-    //                 <div><button onClick={addToCart}>Добавить в корзину</button></div>
-    //             </Card.Footer>
-    //         </Card>
-    //     )
-    // })
 
 
     return (
         <div>
-            <div className={module.container}>
+            <div className="container">
                 Страница категории
-                <CardGroup className={module.card_group}>
+                <CardGroup className="card_group">
                     {viewProducts}
                 </CardGroup>
             </div>

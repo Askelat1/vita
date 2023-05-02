@@ -85,32 +85,15 @@ const Catalog = (props) => {
         )
     })
 
-    // const showAllCategory = categories.map((category, index) => {
-    //     return (
-    //         <Link to={`/category/${category.id}`}>
-    //             <Card text="123123" key={index}>
-    //                 <Card.Img variant="top" src={category?.image} />
-    //                 <Card.Body>
-    //                     <Card.Title>{category.name}</Card.Title>
-    //                     <Card.Text>
-    //                         {category.description}
-    //                     </Card.Text>
-    //                 </Card.Body>
-    //             </Card>
-    //         </Link>
-    //     )
-    // })
     
     return (
         <div>
-            {/* <Header /> */}
             <div>
                 <div>
                     <div>{showAllCategory}</div>
                     <div>{showAllProducts}</div>
                 </div>
             </div>
-            {/* <Footer /> */}
         </div>
     )
 };

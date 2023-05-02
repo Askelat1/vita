@@ -1,13 +1,87 @@
+import { ContextBox } from "../App";
+// import {useContext} from "react"
+import React, { useContext, useState, useEffect } from 'react';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 import module from './Tovar.module.css'
-import React from 'react';
-import fon1 from '../assets/fon.png'
-import vin1 from '../assets/vin1.png'
-import vin2 from '../assets/vin2.png'
-import vin3 from '../assets/vin3.png'
+import emptyBusket from "../assets/empty-busket.gif";
 
 
+const Tovar = () => {
+    const [box, setBox] = useContext(ContextBox);
+    const [totalItems, setTotalItems] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
-function Tovar (props) {
+    useEffect(() => {
+        let itemsCount = 0;
+        let totalPrice = 0;
+
+        for (let i = 0; i < box.length; i++) {
+            const count = box[i].count || 1;
+            itemsCount += count;
+            totalPrice += Number(box[i].price) * count;
+            console.log( totalPrice);
+        }
+
+        setTotalItems(itemsCount);
+        setTotalPrice(totalPrice);
+    }, [box]);
+
+    const handleIncrease = (index) => {
+        const updatedBox = [...box];
+        updatedBox[index].count = (updatedBox[index].count || 1) + 1;
+        setBox(updatedBox);
+    };
+
+    const handleDecrease = (index) => {
+        const updatedBox = [...box];
+
+        if (updatedBox[index].count > 1) {
+            updatedBox[index].count -= 1;
+            setBox(updatedBox);
+        }
+    };
+
+    const handleRemove = (index) => {
+        const updatedBox = [...box];
+        updatedBox.splice(index, 1)
+        setBox(updatedBox)
+
+        updatedBox.length == 0 ? localStorage.removeItem("box") : []
+    };
+
+    const handleClear = () => {
+        setBox([]);
+        localStorage.removeItem("box");
+    };
+
+    const allProducts = box.map((item, index) => {
+        return (
+            <div >
+            <div className={module.block2} text="1" key={index}>
+                <img className={module.vin} src={item.image} alt="" />
+                <div className={module.tittle}>
+                    <h2 className={module.h2}>{item.title}</h2>
+                </div>
+                <div className={module.countBox}>
+                    <button className={module.mines} onClick={() => handleDecrease(index)}> - </button>
+                    <input className={module.count} type="text" value={item.count || 1} readOnly />
+                    <button className={module.plus} onClick={() => handleIncrease(index)}> + </button>
+                </div>
+                <div className={module.priceRemove}>
+                    {item.price * (item.count || 1)} сом
+                    <div className={module.trash}>
+                        <button onClick={() => handleRemove(index)}>
+                            <i class="fa-sharp fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        )
+    })
+
+
 
     return (
         <div >
@@ -16,75 +90,46 @@ function Tovar (props) {
         </div>
         <div className={module.block1}>
             <div className={module.tovars}>
-                
-                <div className={module.block2}>
-                    <img className={module.vin1}src={vin1} alt="" />
-                <div>
-                    <h2 className={module.h2}>Solgar 
-Неронутриенс
-30 капсул</h2>
-                </div>
-                <div className={module.plus}>
-                <i class="fa-solid fa-minus"></i>
-                    <h4 className={module.h4}>1</h4>
-                <i class="fa-solid fa-plus"></i>
-                </div>
-                <div><h3 className={module.h3}>850 сом</h3></div>
-                </div>
-
-
-                <div className={module.line}></div>
-                
-
-                
-                <div className={module.block2}>
-                <img className={module.vin2}src={vin2} alt="" />
-                <div>
-                    <h2 className={module.h2}>GLS
-Коллаген с гиалуроновой 
-кислотой и витамином С 
-180 капс</h2>
-                </div>
-            
-                <div className={module.plus}>
-                <i class="fa-solid fa-minus"></i>
-                    <h4 className={module.h4}>1</h4>
-                <i class="fa-solid fa-plus"></i>
-    
-                </div>
-                <div><h3 className={module.h3}>1800 сом</h3></div></div>
-
-
-                <div className={module.line}></div>
-                
-
-                
-                <div className={module.block2}>
-                    <img className={module.vin3}src={vin3} alt="" />
-                <div><h2 className={module.h2}>GLS
-Витамины для волос
-60 капсул</h2></div>
-<div className={module.plus}>
-                <i class="fa-solid fa-minus"></i>
-                    <h4 className={module.h4}>1</h4>
-                <i class="fa-solid fa-plus"></i>
-    
-                </div>
-                
-                <div><h3 className={module.h3}>1400 сом</h3></div></div>
-                
-
+            <CardGroup  >
+                {allProducts}
+            </CardGroup>
             </div>
             <div className={module.line1}></div>
             <div className={module.block3}>
                 <div className={module.itog}>
                     <h3>
-                    Итого <br />
-4050 сом
+                    Итого<br />{totalPrice} сом
                     </h3>
                 </div>
-                <button className={module.button}>Оформить заказ</button>
+                <button  className={module.button}>Оформить заказ</button>
+            </div >
+        </div>
+        <div>
+            {box?.length > 0 ? (
+                <div className="cart-info">
+                <h1 className="total-price">Total price: {totalPrice} сом</h1>
+                { allProducts }</div> 
+            ) : ( <div className="colorchik">
+            <div className="cart-info">
+                <h1 className="total-item">Total items: {totalItems}</h1>
+                <h1 className="total-price">Total price: {totalPrice} сом</h1>
             </div>
+            <div className="text-center">
+                <h3 style={{paddingTop: "50px"}}>The busket is empty 👀 </h3>
+                <p>
+                    Most likely, you have not chosen anything. To order, go to the Catalog page.
+                </p>
+                <img src={emptyBusket} alt="" />
+                <br/>
+            </div>
+            
+<div className="clear-button">
+<button className="clear-all" onClick={handleClear}>Clear all Cart</button>
+
+</div>
+ </div>
+            )}
+
         </div>
         </div>
     )

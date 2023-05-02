@@ -5,9 +5,6 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import module from "./Korzina.module.css";
 import React from "react";
 import logo from "../assets/logo.png";
-import kor1 from "../assets/kor1.png";
-import kor2 from "../assets/kor2.png";
-import kor3 from "../assets/kor3.png";
 
 
 
