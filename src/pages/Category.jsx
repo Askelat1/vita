@@ -64,7 +64,8 @@ const Category = (props) => {
                 <Card.Body>
                     <div className="card_info">
                     <Card.Title className="name">{product.name}</Card.Title>
-                    <div className='price-product'>{product.price} сом</div>
+                    <div className='price-product'>{product.price}</div>
+                    <span>сом</span>
                     </div>
                 </Card.Body>
                 <Card.Footer>

@@ -22,13 +22,6 @@ function Korzina(props) {
             </div>
             </Card>
             </CardGroup>
-            // <div className="goods" key={index}>
-            //     <div className="title">{item.title}</div>
-            //     <div className="title">
-            //         <img src={item.image} alt="" />
-            //     </div>
-            //     <div>{item.price}</div>
-            // </div>
         )
     })
 

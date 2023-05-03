@@ -84,12 +84,37 @@ const Tovar = () => {
 
 
     return (
+        
         <div >
+            
             <div className={module.block0}>
             <h1 className={module.h1}>Бесплатная доставка по всему Кыргызстану & возврат в течение 30 дней</h1>
         </div>
         <div className={module.block1}>
             <div className={module.tovars}>
+            <div>
+            {box?.length > 0 ? (
+                <div className="cart-info">
+                
+                </div> 
+            ) : ( <div className="colorchik">
+            <div className="text-center">
+                <h3 style={{paddingTop: "50px"}}>The busket is empty 👀 </h3>
+                <p>
+                    Most likely, you have not chosen anything. To order, go to the Catalog page.
+                </p>
+                <img src={emptyBusket} alt="" />
+                <br/>
+            </div>
+            
+<div className="clear-button">
+{/* <button className="clear-all" onClick={handleClear}>Clear all Cart</button> */}
+
+</div>
+ </div>
+            )}
+
+        </div>
             <CardGroup  >
                 {allProducts}
             </CardGroup>
@@ -104,33 +129,7 @@ const Tovar = () => {
                 <button  className={module.button}>Оформить заказ</button>
             </div >
         </div>
-        <div>
-            {box?.length > 0 ? (
-                <div className="cart-info">
-                <h1 className="total-price">Total price: {totalPrice} сом</h1>
-                { allProducts }</div> 
-            ) : ( <div className="colorchik">
-            <div className="cart-info">
-                <h1 className="total-item">Total items: {totalItems}</h1>
-                <h1 className="total-price">Total price: {totalPrice} сом</h1>
-            </div>
-            <div className="text-center">
-                <h3 style={{paddingTop: "50px"}}>The busket is empty 👀 </h3>
-                <p>
-                    Most likely, you have not chosen anything. To order, go to the Catalog page.
-                </p>
-                <img src={emptyBusket} alt="" />
-                <br/>
-            </div>
-            
-<div className="clear-button">
-<button className="clear-all" onClick={handleClear}>Clear all Cart</button>
-
-</div>
- </div>
-            )}
-
-        </div>
+        
         </div>
     )
 }

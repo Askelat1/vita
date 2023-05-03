@@ -20,7 +20,6 @@ function Header(props) {
             <a className={module.nav_item} href="/">Главная</a>
             <a className={module.nav_item} href="/catalog">Каталог</a>
             <a className={module.nav_item} href="/tovar">Корзина</a>
-            <a className={module.nav_item} href="/cart">Корзина2</a>
             <a className={module.nav_item} href="/korzina">tovar</a>
             {/* <li><Link to='/cart'>Корзина2</Link></li> */}
         </div>
