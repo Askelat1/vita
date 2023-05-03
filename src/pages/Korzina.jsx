@@ -1,96 +1,73 @@
 import { ContextBox } from "../App";
-import {useContext} from "react"
+
+import React, { useContext, useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import module from "./Korzina.module.css";
-import React from "react";
-import logo from "../assets/logo.png";
 
 
 
 function Korzina(props) {
 
     const [box, setBox] = useContext(ContextBox)
+    const [totalItems, setTotalItems] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    useEffect(() => {
+      let itemsCount = 0;
+      let totalPrice = 0;
+
+      for (let i = 0; i < box.length; i++) {
+          const count = box[i].count || 1;
+          itemsCount += count;
+          totalPrice += Number(box[i].price) * count;
+          console.log( totalPrice);
+      }
+
+      setTotalItems(itemsCount);
+      setTotalPrice(totalPrice);
+  }, [box]);
+
+  const handleIncrease = (index) => {
+      const updatedBox = [...box];
+      updatedBox[index].count = (updatedBox[index].count || 1) + 1;
+      setBox(updatedBox);
+  };
+
+
+  const handleClear = () => {
+      setBox([]);
+      localStorage.removeItem("box");
+  };
     const allProducts = box.map((item, index) => {
         return (
-            <CardGroup >
-            <Card className={module.block_h2}  text="1" key={index}>
+            <div>
+            <div className={module.block_h2}  text="1" key={index}>
             <img className={module.block_img} src={item.image} alt="" />
             <h2 className={module.h2}>{item.title}</h2>
             <div>
             <h3 className={module.h3}>{item.price} сом</h3>
             </div>
-            </Card>
-            </CardGroup>
+            </div>
+            </div>
         )
     })
-
-    // const productSum = box.map((item, index) => {
-    //     let sum = 0
-    //     for(i = 0; i > box.length; i++) {
-    //         sum += item.price
-    //         return sum
-    //     }
-    //     return (
-    //         <Cart>
-    //             <h5>{sum} сом</h5>
-    //         </Cart>
-    //     )
-    // })
 
 
     return (
     <div className={module.block1}>
       <div className={module.block}>
-        <img src={logo} alt="" />
-        <button className={module.button_2}>
-          {" "}
-          <i class="fa-solid fa-arrow-left"></i> корзина
-        </button>
-        <CardGroup className={module.block2}>
+        <Link to="/tovar">
+          <button className={module.button_2}>
+            {" "}
+            <i class="fa-solid fa-arrow-left"></i> корзина
+          </button>
+        </Link>
+        <div className={module.block2}>
         {allProducts}
-        </CardGroup>
-        {/* <div className={module.block2}>
-          <div className={module.block_h2}>
-            <img  src={kor1} alt="" />
-            <h2 className={module.h2}>
-              GLS <br />
-              Витамины для волос
-            </h2>
-          </div>
-          <div>
-            <h3 className={module.h3}>850 сом</h3>
-          </div>
-        </div> */}
-
-        {/* <div className={module.block2}>
-          <div className={module.block_h2}>
-            <img src={kor2} alt="" />
-            <h2 className={module.h2}>
-              Solgar <br />
-              Неронутриенс
-            </h2>
-          </div>
-
-          <div>
-            <h3 className={module.h3}>1800 сом</h3>
-          </div>
-        </div> */}
-
-        {/* <div className={module.block2}>
-          <div className={module.block_h2}>
-            <img src={kor3} alt="" />
-            <h2 className={module.h2}>
-              GLS <br />
-              Коллаген с гиалуроновой
-              <br /> кислотой и витамином С
-            </h2>
-          </div>
-
-          <div>
-            <h3 className={module.h3}>1400 сом</h3>
-          </div>
-        </div> */}
+        </div>
+        
       </div>
       <div className={module.line}></div>
       <div className={module.block3}>
@@ -120,12 +97,8 @@ function Korzina(props) {
                 <div className={module.blockh4}>
                   <div className={module.block_h4}>
                     <h4>стоимость</h4>
-                    <h5>850 сом</h5>
-                  </div>
-                  <div className={module.block_h4}>
-                    <h4>стоимость</h4>
                     {/* {productSum} */}
-                    <h5>850 сом</h5>
+                    <h5>{totalPrice} сом</h5>
                   </div>
                 </div>
                 {/* <button className={module.button_1}>купить</button> */}
@@ -135,7 +108,7 @@ function Korzina(props) {
 
           <button className={module.button}>скидочный код</button>
           <button className={module.button}>ввести</button>
-          <button className={module.button_1}>купить</button>
+          <button onClick={handleClear} className={module.button_1}>купить</button>
         </div>
       </div>
     </div>

@@ -21,6 +21,7 @@ function Kabinet (props){
                 </div>
                 <div className={module.block_h4}>
                     <h4>Избранные товары</h4>
+                    <i class="fa-regular fa-heart"></i>
                 </div>
             </div>
             <div>

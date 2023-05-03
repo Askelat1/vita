@@ -138,6 +138,7 @@ border-radius: 20px;
 }
 
 .button{
+   cursor: pointer;
    margin:55px auto ;
    width: 65%;
    border: 2px solid #AAA8CF;

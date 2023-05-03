@@ -1,17 +1,18 @@
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import {useState, useEffect} from "react"
-import CardComponent from "../components/CardComponent"
-import module from "./Catalog.module.css"
+import {useState, useEffect, useContext} from "react"
+import { useParams } from "react-router-dom";
+import  "./Catalog.css"
+import { collection, query, getDocs, where  } from "firebase/firestore";
+import { database } from "../app/firebase";
+import {ContextBox} from '../App'
+import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import { collection, query, getDocs } from "firebase/firestore";
-import { database } from "../app/firebase";
-import {Link} from 'react-router-dom'
 
 const Catalog = (props) => {
+    const id = useParams()
     const [products, setProducts] = useState([])
     const [categories, setCategories] = useState([])
+    const [box, setBox] = useContext(ContextBox)
 
     useEffect(() => {
         getData();
@@ -34,53 +35,70 @@ const Catalog = (props) => {
 
     async function getDataProduct() {
         const r = query(collection(database, "products"));
-        const querySnaphot = await  getDocs(r);
+        const allProducts = await  getDocs(r);
         let product = []
-        querySnaphot.forEach((doc) => {
+        allProducts.forEach((doc) => {
             product.push({...doc.data(), id: doc.id})
             // console.log(doc.id)
         });
         setProducts(product)
     }
+    function addToCart(event) {
+        const currentCard = event.currentTarget.closest('.card')
+
+        if (box.find(item => item.id === currentCard.querySelector('.id-card').dataset.id)) {
+            const index = box.findIndex(item => item.id === currentCard.querySelector('.id-card').dataset.id)
+            let nexBox = box;
+            nexBox[index].count++;
+            setBox(nexBox)
+        } else {
+            setBox([
+                ...box,
+                {
+                    image: currentCard.querySelector('.card-img-top').getAttribute('src'),
+                    title: currentCard.querySelector('.card-title').innerHTML,
+                    // description: currentCard.querySelector('.card-text').innerHTML,
+                    price: currentCard.querySelector('.price-product').innerHTML,
+                    id: currentCard.querySelector('.id-card').dataset.id,
+                    count: 1
+                }
+            ])
+        }
+    }
 
     const showAllProducts = products.map((product, index) => {
         return (
-            <CardGroup className={module.card_group}>
-            <Card   text="1" key={index}>
-                <Card.Img className= {module.card_img} variant="top" src={product?.photo} />
+            <Card className="card_group" text="1" key={index}>
+            <div className="id-card" data-id={product.id}>
+                <Card.Img className= "card_img" variant="top" src={product.photo} />
                 <Card.Body>
-                    <div className={module.card_info}>
-                    <Card.Title className={module.name}>{product.name}</Card.Title>
-                    <div className="text-muted">{product.price}сом</div>
+                    <div className="card_info">
+                    <Card.Title className="name">{product.name}</Card.Title>
+                    <div className='price-product'>{product.price}</div>сом
                     </div>
-                    {/* <Card.Title className={module.name}>{product.name}</Card.Title> */}
-                    {/* <Card.Text>
-                    {product.description}
-                    </Card.Text> */}
                 </Card.Body>
                 <Card.Footer>
                     <div>
-                    <i class="fa-solid fa-arrow-right" className={module.archer}></i>
-                    <button className={module.but}>оформить сейчас</button>
+                    <i class="fa-solid fa-arrow-right" className="archer"></i>
+                    <button onClick={addToCart} className="but">оформить сейчас</button>
                     </div>
                     {/* <small className="text-muted">{product.price}сом</small> */}
                 </Card.Footer>
+            </div>
             </Card>
-            </CardGroup>
             
         )
     })
     const showAllCategory = categories.map((categories, id) => {
         return (
             <Link to={`/category/${categories.id}`}>
-                <Card text="123123" key={id}>
-                    <Card.Body>
-                        <Card.Title></Card.Title>
-                        <Card.Text className={module.a}>
+                <div text="123123" key={id}>
+                    <div>
+                        <div className="a">
                         {categories.name}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+                        </div>
+                    </div>
+                </div>
             </Link>
         )
     })

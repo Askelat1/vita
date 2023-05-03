@@ -1,0 +1,79 @@
+.fon2 {
+    width: 100%;
+}
+.h2{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 47px;
+
+color: #FFFFFF;
+position: absolute;
+}
+.fons {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.h1{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 30px;
+text-align: justify;
+
+color:black;
+padding: 20px 100px;
+}
+li{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+text-align: justify;
+
+color: #000000;
+
+}
+.h1_{
+    padding: 20px 100px;
+}
+
+
+.h3{
+    padding: 0 40px;
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+text-align: justify;
+
+color: #000000;
+}
+.one1{
+    display: flex;
+    
+    padding: 10px 80px;
+}
+.block{
+    display: flex;
+}
+
+@media(max-width: 968px){
+    
+    .one{
+        display: block;
+    }
+    
+ 
+ }
+
+
+
+
+

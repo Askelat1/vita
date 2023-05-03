@@ -4,6 +4,7 @@ import {RouterProvider} from 'react-router-dom'
 import router from './app/index.jsx'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import NavBar from './components/NavBar'
 
 
 // import { Login } from './pages/Login'
@@ -24,6 +25,8 @@ import Korzina from './pages/Korzina'
 import Kabinet from './pages/Kabinet'
 import MainPages from './pages/MainPages'
 import Cart from './pages/Cart'
+import About from './pages/AboutUs'
+import Politics from './pages/Politics'
 
 // import './App.css'
 const ContextBox = createContext()
@@ -52,10 +55,9 @@ function App() {
         {/* <RouterProvider
           router={router}
         /> */}
-      
         <Header />
+        <NavBar />
         <Routes>
-
           <Route path='/regist' element ={<Registration />}/>
           <Route path='/removePass' element ={<Login />}/>
           <Route path='/newPass' element ={<NewPassword />}/>
@@ -73,6 +75,8 @@ function App() {
           <Route path='/kabinet' element ={<Kabinet />}/>
           <Route path='/' element ={<MainPages />}/>
           <Route path='/cart' element ={<Cart />}/>
+          <Route path='/about' element ={<About />}/>
+          <Route path='/politics' element ={<Politics />}/>
         </Routes>
         {/* <Login /> */}
         <Footer />

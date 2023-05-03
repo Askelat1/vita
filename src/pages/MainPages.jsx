@@ -21,25 +21,25 @@ function MainPages (props){
                         <div className={module.imgblock}>
                             <img src={main1} alt={main1} />
                         </div>
-                        <h2 claassName={module.h2m}>
+                        <h2 className={module.h2m}>
                         Креатин моногидрат <br/> вкус цитруса 150 гр
                         </h2>
                     </div>
                     
                     <div className={module.block_}>
                         <div className={module.imgblock}>
-                            <img src={main2} alt="" />
+                            <img src={main2} alt={main1} />
                         </div>
-                        <h2 claassName={module.h2m}>
+                        <h2 className={module.h2m}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
                         </h2>
                     </div>
 
                     <div className={module.block_}>
                         <div className={module.imgblock}>
-                            <img src={main3} alt="" />
+                            <img src={main3} alt={main1} />
                         </div>
-                        <h2 claassName={module.h2m}>
+                        <h2 className={module.h2m}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
                         </h2>
                     </div>
@@ -53,7 +53,7 @@ function MainPages (props){
                         <div className={module.imgblock_2}>
                             <img src={main1} alt="" />
                         </div>
-                        <h2 claassName={module.h2m}>
+                        <h2 className={module.h2m_}>
                         Креатин моногидрат <br/> вкус цитруса 150 гр
                         </h2>
                     </div>
@@ -62,7 +62,7 @@ function MainPages (props){
                         <div className={module.imgblock_2}>
                             <img src={main2} alt="" />
                         </div>
-                        <h2 claassName={module.h2m}>
+                        <h2 className={module.h2m_}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
                         </h2>
                     </div>
@@ -71,7 +71,7 @@ function MainPages (props){
                         <div className={module.imgblock_2}>
                             <img src={main3} alt="" />
                         </div>
-                        <h2 claassName={module.h2m}>
+                        <h2 className={module.h2m_}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
                         </h2>
                     </div>

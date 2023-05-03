@@ -1,6 +1,7 @@
 import { ContextBox } from "../App";
 // import {useContext} from "react"
 import React, { useContext, useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import module from './Tovar.module.css'
@@ -126,7 +127,9 @@ const Tovar = () => {
                     Итого<br />{totalPrice} сом
                     </h3>
                 </div>
-                <button  className={module.button}>Оформить заказ</button>
+                <div>
+                <Link to="/korzina"><button  className={module.button}>Оформить заказ</button></Link>
+                </div>
             </div >
         </div>
         
