@@ -86,7 +86,6 @@ const Catalog = (props) => {
                 </Card.Footer>
             </div>
             </Card>
-            
         )
     })
     const showAllCategory = categories.map((categories, id) => {

@@ -100,11 +100,11 @@ const Tovar = () => {
                 </div> 
             ) : ( <div className="colorchik">
             <div className="text-center">
-                <h3 style={{paddingTop: "50px"}}>The busket is empty 👀 </h3>
+                <h3 style={{paddingTop: "50px"}}>Корзина пуста </h3>
                 <p>
-                    Most likely, you have not chosen anything. To order, go to the Catalog page.
+                    Выберите что нибудь
                 </p>
-                <img src={emptyBusket} alt="" />
+                {/* <img src={emptyBusket} alt="" /> */}
                 <br/>
             </div>
             
