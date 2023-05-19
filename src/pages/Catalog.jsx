@@ -63,6 +63,7 @@ const Catalog = (props) => {
                     count: 1
                 }
             ])
+            alert("Товар добавлен в корзину");
         }
     }
 
@@ -91,7 +92,7 @@ const Catalog = (props) => {
     const showAllCategory = categories.map((categories, id) => {
         return (
             <Link to={`/category/${categories.id}`}>
-                <div text="123123" key={id}>
+                <div className="category" text="123123" key={id}>
                     <div>
                         <div className="a">
                         {categories.name}
@@ -105,14 +106,21 @@ const Catalog = (props) => {
     
     return (
         <div>
-            <div>
-                <div>
-                    <div>{showAllCategory}</div>
-                    <div>{showAllProducts}</div>
+        <div>
+            <div className="ter" >
+                <div className="catalog_b">
+                <div className="catalog_a"> 
+                <div className="catalog_block">{showAllCategory}</div>
                 </div>
+                </div>
+                <CardGroup className="card_group">
+                {showAllProducts}
+            </CardGroup>
+
             </div>
         </div>
+    </div>
     )
 };
 
-export default Catalog;
+export default Catalog;

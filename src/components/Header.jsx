@@ -31,19 +31,19 @@ function Header(props) {
         const nav_icons = (user)? (
             <nav className={module.nav}>                
                 <div className={module.icon}>
-                    <Link to="#"><img className={module.nav__item} src={search}></img></Link>
                     <Link to="/korzina"><img className={module.nav__item} src={shop}></img></Link>
                     <Link to="#"><img className={module.nav__item} src={favorite}></img></Link>
                     <Link to="/main"><img className={module.nav__item} src={login}></img></Link>
+                    {/* <Link to="#"><img className={module.nav__item} src={search}></img></Link> */}
                 </div>
             </nav>
         ) : (
             <nav className={module.nav}>                
                 <div className={module.icon}>
-                    <img className={module.nav__item} src={search}></img>
                     <img className={module.nav__item} src={shop}></img>
                     <img className={module.nav__item} src={favorite}></img>
                     <Link to="/mainOffice"><img className={module.nav__item} src={login}></img></Link>
+                    {/* <img className={module.nav__item} src={search}></img> */}
                 </div>
             </nav>
         )

@@ -112,7 +112,7 @@ const Tovar = () => {
 {/* <button className="clear-all" onClick={handleClear}>Clear all Cart</button> */}
 
 </div>
- </div>
+</div>
             )}
 
         </div>

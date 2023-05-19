@@ -49,13 +49,15 @@
 }
 .click{
     cursor: pointer;
-    width: 350px;
+    width: 345px;
     height: 49px;
     background-color: #AAA8CF;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
+    margin-left: 0;
 
 }
+
 .exit{
     padding-left: 600px;
 }
@@ -219,7 +221,7 @@ background: #FFFFFF;
     }
 
     .reg {
-     width: 280px;
+    width: 280px;
     }
 }
 @media (max-width:576px ){
@@ -248,8 +250,8 @@ background: #FFFFFF;
     }
 
     .reg {
-     width: 280px;
-     margin-left: 205px;
+    width: 280px;
+    margin-left: 205px;
     }
     .email{
         padding: 0 20px;

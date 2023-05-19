@@ -2,6 +2,8 @@ import {useForm} from "react-hook-form";
 import module from './Registration.module.css'
 import { createUserWithEmailAndPassword, sendEmailVerification  } from 'firebase/auth';
 import { auth } from '../app/firebase'
+import {Link} from 'react-router-dom'
+
 
 import logo from '../assets/logo.png'
 import google from '../assets/google.png'
@@ -63,7 +65,7 @@ function Registration (props) {
                     />
                     {errors.email && <span className={module.error} role="alert">{errors.email?.message}</span>}
                 </div>
-                <div className={module.form_input}>
+                {/* <div className={module.form_input}>
                     <label htmlFor="login">Номер телефона </label>
                     <input 
                         type="number" 
@@ -80,7 +82,7 @@ function Registration (props) {
                         })}
                     />
                     {errors.login && <span className="error" role="alert">{errors.login?.message}</span>}
-                </div>
+                </div> */}
                 <div className={module.form_input}>
                     <label htmlFor="password">Пароль: </label>
                     <input 
@@ -128,7 +130,8 @@ function Registration (props) {
             <div className={module.block2_text}>У меня есть аккаунт</div>
             
             <div className={module.block2}>
-            <a className={module.block2_btn} href="/mainOffice"> Войти</a>
+            
+            <Link to= '/mainOffice'><a className={module.block2_btn} > Войти</a></Link>
                 {/* <button className="block2-btn">frgvr</button> */}
             </div>
         </div>

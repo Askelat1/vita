@@ -47,7 +47,7 @@ function Korzina(props) {
             <img className={module.block_img} src={item.image} alt="" />
             <h2 className={module.h2}>{item.title}</h2>
             <div>
-            <h3 className={module.h3}>{item.price} сом</h3>
+            <h3 className={module.h3}>{item.price * (item.count || 1)} сом</h3>
             </div>
             </div>
             </div>

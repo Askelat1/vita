@@ -5,19 +5,19 @@
 
 .box {
     height: 80px;
-    display: flex;
+    display: none;
     justify-content: space-between;
     /* border-bottom: 1px solid gray;    */
 }
 
 .logo_image {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 10px;
 }
 
 .menu {
-    display: flex;
+    display: none;
     align-items: center;
     font-size: 22px;
     line-height: 28px;
@@ -38,6 +38,15 @@
     cursor: pointer;
     z-index: 10;
     }
+    
+    .box{
+        display: flex;
+    }
+
+    .logo_image{
+        display: flex;
+    }
+
 
 .menu {
     display: flex;

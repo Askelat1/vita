@@ -19,7 +19,7 @@ function MainPages (props){
                 <div className={module.block}>
                     <div className={module.block_}>
                         <div className={module.imgblock}>
-                            <img src={main1} alt={main1} />
+                            <img className={module.main} src={main1} alt={main1} />
                         </div>
                         <h2 className={module.h2m}>
                         Креатин моногидрат <br/> вкус цитруса 150 гр
@@ -28,7 +28,7 @@ function MainPages (props){
                     
                     <div className={module.block_}>
                         <div className={module.imgblock}>
-                            <img src={main2} alt={main1} />
+                            <img className={module.main} src={main2} alt={main1} />
                         </div>
                         <h2 className={module.h2m}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
@@ -37,7 +37,7 @@ function MainPages (props){
 
                     <div className={module.block_}>
                         <div className={module.imgblock}>
-                            <img src={main3} alt={main1} />
+                            <img className={module.main} src={main3} alt="" />
                         </div>
                         <h2 className={module.h2m}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
@@ -51,27 +51,27 @@ function MainPages (props){
                 <div className={module.block}>
                     <div>
                         <div className={module.imgblock_2}>
-                            <img src={main1} alt="" />
+                            <img className={module.main} src={main1} alt="" />
                         </div>
-                        <h2 className={module.h2m_}>
+                        <h2 className={module.h2m}>
                         Креатин моногидрат <br/> вкус цитруса 150 гр
                         </h2>
                     </div>
                     
                     <div>
                         <div className={module.imgblock_2}>
-                            <img src={main2} alt="" />
+                            <img className={module.main} src={main2} alt="" />
                         </div>
-                        <h2 className={module.h2m_}>
+                        <h2 className={module.h2m}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
                         </h2>
                     </div>
 
                     <div>
                         <div className={module.imgblock_2}>
-                            <img src={main3} alt="" />
+                            <img className={module.main} src={main3} alt="" />
                         </div>
-                        <h2 className={module.h2m_}>
+                        <h2 className={module.h2m}>
                         Креатин моногидрат <br/>  вкус цитруса 150 гр
                         </h2>
                     </div>
@@ -83,7 +83,7 @@ function MainPages (props){
                 </h1>
                 <div>
                     <div className={module.woman}>
-                        <img src={mainw} alt="" className={module.mainman} />
+                        <img  src={mainw} alt="" className={module.mainman} />
                         <div className={module.woman_2}>
                             <h5 className={module.h5}>Качество товара отличное, давно пользуюсь <br/> этой фирмой витаминов, эти приобрела маме, она в восторге.</h5>
                         </div>
