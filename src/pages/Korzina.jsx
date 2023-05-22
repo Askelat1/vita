@@ -98,7 +98,7 @@ function Korzina(props) {
                   <div className={module.block_h4}>
                     <h4>стоимость</h4>
                     {/* {productSum} */}
-                    <h5>{totalPrice} сом</h5>
+                    <h5 className={module.h5}>{totalPrice} сом</h5>
                   </div>
                 </div>
                 {/* <button className={module.button_1}>купить</button> */}
@@ -106,8 +106,10 @@ function Korzina(props) {
             </div>
           </div>
 
+          <div className={module.butt}>
           <button className={module.button}>скидочный код</button>
           <button className={module.button}>ввести</button>
+          </div>
           <button onClick={handleClear} className={module.button_1}>купить</button>
         </div>
       </div>

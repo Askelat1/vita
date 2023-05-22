@@ -5,16 +5,14 @@ import ProductPage from '../pages/ProductPage'
 import Category from "../pages/Category.jsx";
 import Cart from '../pages/Cart'
 
-const path = (import.meta.env.PROD)? '/shop-template' : ''
-
 
 const router = createBrowserRouter([
     {
-        path: `${path}/`,
+        path: `/`,
         element: <Main />
     },
     {
-        path: `${path}/catalog`,
+        path: `/catalog`,
         element: <Catalog />
     },
     {

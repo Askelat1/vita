@@ -20,7 +20,7 @@
 
 .block1{
    display: grid;
-   grid-template-columns:65% 10% 35%  ;
+   grid-template-columns:55% 10% 35%  ;
    grid-template-rows: 100%;
    padding: 2% 0;
 }
@@ -48,6 +48,7 @@
 
    color: #0F0F0F;
    text-align: center;
+   width: 200px;
 }
 
 
@@ -55,7 +56,7 @@
    padding: 20px;
    display: grid;
    
-   grid-template-columns: 2fr  3fr 2fr  1fr;
+   grid-template-columns: 2fr  3fr 2fr 1fr ;
 }
 .block2 ,.tittle{
    display: grid;
@@ -71,6 +72,7 @@
    display: flex;
    height: 50px;
    margin-top: 20px;
+   
 }
 
 .mines {
@@ -99,7 +101,10 @@
 
 .priceRemove {
    display: flex;
+
    gap: 20px;
+   padding-left: 40px;
+   
 }
 
 .line{
@@ -169,4 +174,110 @@ color: #0F0F0F;
 .h4{
    padding: 0 10px;
 }
+.block_{
+display: flex;
+}
 
+
+@media(max-width:912px) {
+   .block_{
+      display: flex;
+      flex-direction: column;
+   }
+   .h2 {
+      font-size: 13px;
+      line-height: 15px;
+      width: 124px;
+      padding-left: 20px;
+  }
+  input{
+   margin: 0;
+  }
+   
+}
+@media(max-width:768px){
+   .button{
+      width: 95%;
+   }
+   .itog{
+      width: 100%;
+   }
+   .line1{
+      display: block;
+      margin: 0 0px;
+    width: 0px;
+    height: 0%;
+    background-color: #AAA8CF;
+    border-radius: 0px;
+   }
+ 
+   .block1 {
+      display: grid;
+      grid-template-columns: none;
+      grid-template-rows: 100%;
+      padding: 2% 0;
+  }
+  .block3 {
+   grid-column-start: 2;
+   grid-row: 1 / -1;
+}
+
+
+}
+
+@media (max-width:420px) {
+   .block1{
+       display: flex;
+   }
+   .block1, .block3 {
+       grid-column-start: none;
+       grid-row: 1 / -1;
+   }
+   
+   .block1 {
+       display: flex;
+       flex-direction: column;
+       grid-template-columns:none;
+       grid-template-rows: none;
+       padding: 2% 0;
+   }
+   .mines {
+       border: 1px solid black;
+       border-radius: 44%;
+       width: 18px;
+       margin-left: 38px;
+       height: 45%;
+   }
+   .plus {
+       border: 1px solid black;
+       border-radius: 44%;
+       width: 18px;
+       height: 45%;
+   }
+   .h2 {
+      font-size: 11px;
+      line-height: 10px;
+      width: 124px;
+      padding-left: 35px;
+      width: 93px;
+  }
+  .itog{
+   margin: 0 auto;
+   width: 80%;
+  }
+  .button{
+   padding: 15px 0;
+   text-align: center;
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 400;
+   font-size: 25px;
+   line-height: 40px;
+   text-align: center;
+   color: #AAA8CF;
+   margin: 50px auto;
+   width: 95%;
+   
+  }
+
+}

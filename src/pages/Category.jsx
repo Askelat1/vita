@@ -84,7 +84,7 @@ const Category = (props) => {
         <div>
             <div className="container">
                 Страница категории
-                <CardGroup className="card_group">
+                <CardGroup className="card_groups">
                     {viewProducts}
                 </CardGroup>
             </div>

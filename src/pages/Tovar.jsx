@@ -58,12 +58,13 @@ const Tovar = () => {
 
     const allProducts = box.map((item, index) => {
         return (
-            <div >
+            <div  className={module.block_o}>
             <div className={module.block2} text="1" key={index}>
                 <img className={module.vin} src={item.image} alt="" />
                 <div className={module.tittle}>
                     <h2 className={module.h2}>{item.title}</h2>
                 </div>
+                <div className={module.block_}>
                 <div className={module.countBox}>
                     <button className={module.mines} onClick={() => handleDecrease(index)}> - </button>
                     <input className={module.count} type="text" value={item.count || 1} readOnly />
@@ -76,6 +77,7 @@ const Tovar = () => {
                             <i class="fa-sharp fa-solid fa-trash"></i>
                         </button>
                     </div>
+                </div>
                 </div>
             </div>
             </div>
@@ -122,6 +124,7 @@ const Tovar = () => {
             </div>
             <div className={module.line1}></div>
             <div className={module.block3}>
+                <div className={module.itogs}>
                 <div className={module.itog}>
                     <h3>
                     Итого<br />{totalPrice} сом
@@ -129,6 +132,7 @@ const Tovar = () => {
                 </div>
                 <div>
                 <Link to="/korzina"><button  className={module.button}>Оформить заказ</button></Link>
+                </div>
                 </div>
             </div >
         </div>
