@@ -39,10 +39,10 @@
 }
 
 .cont_1_img {
-    background: url(../assets/vin1.png)no-repeat;
     background-size: cover;
-    width: 200px;
-    height: 200px;
+    margin-top: 18px;
+    width: 150px;
+    height: 150px;
 }
 
 .cont_2 {

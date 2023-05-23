@@ -9,7 +9,11 @@ import { database } from '../app/firebase';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { ContextBox } from '../App';
-import module from './ProductPage.module.css'
+import module from './ProductPage.css'
+import fon from '../assets/fon.png'
+import like from '../assets/love.png'
+import shop from '../assets/shop_2.png'
+
 
 const ProductPage = (props) => {
     const id = useParams()
@@ -54,38 +58,48 @@ const ProductPage = (props) => {
         }
     }
     const showProduct = product ? (
-        <div className={module.maincards}>
-            <Card>
-                <div className="id-card" data-id={product.id}></div>
-                <h2 className={module.name}>
-                    <Card.Title>
-                        {product.name}
-                    </Card.Title>
-                </h2> <Card.Body>
-                    <div className={module.main}>
-                        <Card.Img variant="top" src={product.photo} />
-                        <div className={module.description}>
-                            <Card.Text>
-                                {product.description}
-                            </Card.Text>
-                            <Card.Footer>
-                                <div className={module.price}><span className="price-product">{product.price}</span>сом</div>
-                                <button className={module.btncart} onClick={addToCart}>оформить сейчас</button>
-                            </Card.Footer>
-                        </div></div>
-                </Card.Body>
-            </Card>
+        <div className='fon'>
+            <div className= "block">
+            <div className="id-card" data-id={product.id}></div>
+                <div className="main_text"> {product.name}</div>
+                <div className="container">
+                    <div className="cont_1">
+                        <img className="cont_1_img" src={product.photo}></img>
+                    </div>
+                    <div className= "cont_2">
+                        <div className= "cont_2_text">{product.information}</div>
+                        <div className= "infor">подробнее</div>
+                    </div>
+                </div>
+                <div className= "kol">
+                        {/* <div className= "kol_box">
+                            <h3 className={module.h3}>кол-во:</h3>
+                            <div className= "up">
+                                <i class="fa-solid fa-angle-up"></i>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+                        </div> */}
+                        <div className={module.icon}>
+                            <img className="icon_like" src={like}></img>
+                            <img className="icon_shop" src={shop}></img>
+                        </div>
+                </div>
+                <div className= "form">
+                            <div className= "karta2">
+                                <Link to = '/vita/tovar'><button className= "karta" onClick={addToCart} >оформить сейчас <i class="fa-solid fa-arrow-right"></i></button></Link>
+                            </div>
+                        </div>
+            </div>
         </div>
     ) : (
-        <div className={module.loading}>Loading...</div>
+        <div className="loading">Подождите...</div>
     )
 
     return (
+        
         <div>
-            <div className={module.container}>
-                <div className={module.main}>
+            <div className="container_2">
                     {showProduct}
-                </div>
             </div>
         </div>
     )

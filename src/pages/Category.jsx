@@ -71,7 +71,7 @@ const Category = (props) => {
 
     const viewProducts = products.map((product, index) => {
         return (
-            // <Link to = {`/vita/products/${product.id}`} key={index} as="div">
+            <Link to = {`/vita/products/${product.id}`} key={index} as="div">
             <Card text="1" key={index}>
                 <div className="id-card" data-id={product.id}></div>
                 <Card.Img className= "card_img" variant="top" src={product?.photo} />
@@ -89,7 +89,7 @@ const Category = (props) => {
                     </div>
                 </Card.Footer>
             </Card>
-            // </Link>
+            </Link>
         )
     })
 
