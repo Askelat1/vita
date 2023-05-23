@@ -131,7 +131,7 @@ function Registration (props) {
             
             <div className={module.block2}>
             
-            <Link to= '/mainOffice'><a className={module.block2_btn} > Войти</a></Link>
+            <Link to= '/vita/mainOffice'><a className={module.block2_btn} > Войти</a></Link>
                 {/* <button className="block2-btn">frgvr</button> */}
             </div>
         </div>

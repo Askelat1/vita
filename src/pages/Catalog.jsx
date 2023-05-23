@@ -69,8 +69,9 @@ const Catalog = (props) => {
 
     const showAllProducts = products.map((product, index) => {
         return (
-            <Card className="card_group" text="1" key={index}>
-            <div className="id-card" data-id={product.id}>
+            // <Link to = {`/vita/products/${product.id}`} key={index} as="div">
+            <Card className="card_group" text="1" key={index} as="div">
+                <div className="id-card" data-id={product.id}>
                 <Card.Img className= "card_img" variant="top" src={product.photo} />
                 <Card.Body>
                     <div className="card_info">
@@ -87,6 +88,7 @@ const Catalog = (props) => {
                 </Card.Footer>
             </div>
             </Card>
+            // </Link>
         )
     })
     const showAllCategory = categories.map((categories, id) => {

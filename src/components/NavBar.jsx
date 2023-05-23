@@ -20,19 +20,19 @@ const NAvbar = () => {
                     }
                     >
                     <li>
-                        <a href='/'>Главная</a>
+                        <a href='/vita/mainPages'>Главная</a>
                     </li>
                     <li>
-                        <a href='/catalog'>Каталог</a>
+                        <a href='/vita/catalog'>Каталог</a>
                     </li>
                     <li>
-                        <a href='/tovar'>Корзина</a>
+                        <a href='/vita/tovar'>Корзина</a>
                     </li>
                     <li>
-                        <a href='/about'>О нас</a>
+                        <a href='/vita/about'>О нас</a>
                     </li>
                     <li>
-                        <a href='/main'>Профиль</a>
+                        <a href='/vita/main'>Профиль</a>
                     </li>
                 </ul>
                 <div onClick={() => setNav(!nav)} className={style.mobile_btn}>

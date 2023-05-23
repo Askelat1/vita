@@ -12,8 +12,8 @@ function Footer(props) {
         <div className={module.line}></div>
         <div>
             <h3 className={module.h3}>Информация</h3>
-            <a href="/about"><p className={module.h3_tittle}>О компании</p></a>
-            <a href="/politics" className={module.h3_tittle}>Политика конфиденциальности</a>
+            <a href="/vita/about"><p className={module.h3_tittle}>О компании</p></a>
+            <a href="/vita/politics" className={module.h3_tittle}>Политика конфиденциальности</a>
             <p className={module.h3_tittle}>Как оформить заказ/доставку</p>
             <p className={module.h3_tittle}>Q/A</p>
         </div>

@@ -131,7 +131,7 @@ const Tovar = () => {
                     </h3>
                 </div>
                 <div>
-                <Link to="/korzina"><button  className={module.button}>Оформить заказ</button></Link>
+                <Link to="/vita/korzina"><button  className={module.button}>Оформить заказ</button></Link>
                 </div>
                 </div>
             </div >

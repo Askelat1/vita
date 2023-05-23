@@ -8,6 +8,8 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import {ContextBox} from '../App'
 import { set } from 'react-hook-form';
+import {Link} from 'react-router-dom'
+
 
 
 const Category = (props) => {
@@ -21,6 +23,17 @@ const Category = (props) => {
     useEffect(() => {
         getData()
     }, [])
+
+    // async function getData() {
+    //     const q = query(collection(database, "product"), where("idCategory", "==", id.id));
+    //     const allProducts = await getDocs(q)
+    //     let products = []
+    //     allProducts.forEach(product => {
+    //         products.push({ ...product.data(), id: product.id })
+    //     })
+    //     setProducts(products)
+    //     console.log(products)
+    // }
 
     async function getData() {
         const q = query(collection(database, "products"), where("idcategory", "==", id.category));
@@ -58,6 +71,7 @@ const Category = (props) => {
 
     const viewProducts = products.map((product, index) => {
         return (
+            // <Link to = {`/vita/products/${product.id}`} key={index} as="div">
             <Card text="1" key={index}>
                 <div className="id-card" data-id={product.id}></div>
                 <Card.Img className= "card_img" variant="top" src={product?.photo} />
@@ -65,7 +79,7 @@ const Category = (props) => {
                     <div className="card_info">
                     <Card.Title className="name">{product.name}</Card.Title>
                     <div className='price-product'>{product.price}</div>
-                    <span>сом</span>
+                    <p className='som'>сом</p>
                     </div>
                 </Card.Body>
                 <Card.Footer>
@@ -75,6 +89,7 @@ const Category = (props) => {
                     </div>
                 </Card.Footer>
             </Card>
+            // </Link>
         )
     })
 
@@ -83,7 +98,6 @@ const Category = (props) => {
     return (
         <div>
             <div className="container">
-                Страница категории
                 <CardGroup className="card_groups">
                     {viewProducts}
                 </CardGroup>

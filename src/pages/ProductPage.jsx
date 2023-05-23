@@ -1,55 +1,92 @@
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import { useParams } from "react-router-dom";
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useContext} from 'react'
 import { Link } from 'react-router-dom'
+import React from 'react';
+import { doc, getDoc } from "firebase/firestore";
+import { database } from '../app/firebase';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import { ContextBox } from '../App';
+import module from './ProductPage.module.css'
 
 const ProductPage = (props) => {
-    const { id } = useParams();
-    const [product, setProduct] = useState([])
-
+    const id = useParams()
+    const [product, setTowar] = useState(null)
+    const [box, setBox] = useContext(ContextBox)
+    console.log(product);
     useEffect(() => {
-        fetch(`https://fakestoreapi.com/category/${id}`)
-        .then(res => res.json())
-        .then(json => {
-            setProduct(json)
-        })
-        .catch(err => {
-            console.log(err);
-        })
+        getData()
     }, [])
-    
 
-    console.log(product)
+    async function getData() {
+        const productRef = doc(database, "products", id.id);
+        const productDoc = await getDoc(productRef);
+        if (productDoc.exists()) {
+            setTowar({ ...productDoc.data(), id: productDoc.id })
+        } else {
+            console.log("No such document!");
+        }
+    }
+
+    function addToCart(event) {
+        const currentCard = event.currentTarget.closest('.card')
+
+        if (box.find(item => item.id === currentCard.querySelector('.id-card').dataset.id)) {
+            const index = box.findIndex(item => item.id === currentCard.querySelector('.id-card').dataset.id)
+            let nexBox = box;
+            nexBox[index].count++;
+            setBox(nexBox)
+        } else {
+            setBox([
+                ...box,
+                {
+                    image: currentCard.querySelector('.card-img-top').getAttribute('src'),
+                    title: currentCard.querySelector('.card-title').innerHTML,
+                    // description: currentCard.querySelector('.card-text').innerHTML,
+                    price: currentCard.querySelector('.price-product').innerHTML,
+                    id: currentCard.querySelector('.id-card').dataset.id,
+                    count: 1
+                }
+            ])
+            alert("Оформление заказа была успешно");
+        }
+    }
+    const showProduct = product ? (
+        <div className={module.maincards}>
+            <Card>
+                <div className="id-card" data-id={product.id}></div>
+                <h2 className={module.name}>
+                    <Card.Title>
+                        {product.name}
+                    </Card.Title>
+                </h2> <Card.Body>
+                    <div className={module.main}>
+                        <Card.Img variant="top" src={product.photo} />
+                        <div className={module.description}>
+                            <Card.Text>
+                                {product.description}
+                            </Card.Text>
+                            <Card.Footer>
+                                <div className={module.price}><span className="price-product">{product.price}</span>сом</div>
+                                <button className={module.btncart} onClick={addToCart}>оформить сейчас</button>
+                            </Card.Footer>
+                        </div></div>
+                </Card.Body>
+            </Card>
+        </div>
+    ) : (
+        <div className={module.loading}>Loading...</div>
+    )
 
     return (
         <div>
-            {/* <Header /> */}
-            <div className="product">
-                <div className="back"><Link to={'/catalog'}>Вернуться назад</Link></div>
-                <div className="product-info">
-                    <div className="product-image">
-                        <img src={product?.image} alt="" />
-                    </div>
-                    <div className="product-text">
-                        <div className="product-title">
-                            {product?.title}
-                        </div>
-                        <div className="product-description">
-                            {product?.description}
-                        </div>
-                        <div className="product-buttons">
-                            <div className="product-price">
-                                Цена: {product?.price} $
-                            </div>
-                            <div className="product-buy">
-                                <button className="product-buy-button">Купить</button>
-                            </div>
-                        </div>
-                    </div>
+            <div className={module.container}>
+                <div className={module.main}>
+                    {showProduct}
                 </div>
             </div>
-            {/* <Footer /> */}
         </div>
     )
 };

@@ -45,8 +45,11 @@ function Korzina(props) {
             <div>
             <div className={module.block_h2}  text="1" key={index}>
             <img className={module.block_img} src={item.image} alt="" />
-            <h2 className={module.h2}>{item.title}</h2>
+            <h2 className={module.h2}>{item.title} </h2>
+            {/* <h5 cla>{item.count} шт</h5> */}
+            
             <div>
+            
             <h3 className={module.h3}>{item.price * (item.count || 1)} сом</h3>
             </div>
             </div>
@@ -58,7 +61,7 @@ function Korzina(props) {
     return (
     <div className={module.block1}>
       <div className={module.block}>
-        <Link to="/tovar">
+        <Link to="/vita/tovar">
           <button className={module.button_2}>
             {" "}
             <i class="fa-solid fa-arrow-left"></i> корзина

@@ -115,7 +115,7 @@ const MainOffice = (props) => {
                   </div>
                         <label htmlFor="login"></label>
                         <input className={module.click} type="submit" value="Войти"/>
-                        <a href="/newPass" className={module.parol}>забыли пароль?</a>
+                        <a href="/vita/newPass" className={module.parol}>забыли пароль?</a>
                               {/* <input type="password" placeholder="Enter Password" className={module.psw} required></input> */}
                               {/* <button className={module.click}>Войти</button>
                               <a href="/newPass" className={module.parol}>забыли пароль?</a> */}
@@ -130,7 +130,7 @@ const MainOffice = (props) => {
                   </div>
                   
                   <h2> Еще нет аккаунта?</h2>
-                  <a href="/regist" className={module.reg}>Зарегистрироваться</a>
+                  <a href="/vita/regist" className={module.reg}>Зарегистрироваться</a>
             </div>
       )
 }
