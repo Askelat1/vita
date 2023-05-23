@@ -19,7 +19,7 @@ function Header(props) {
             <a className={module.nav_item} href="/vita/mainPages">Главная</a>
             <a className={module.nav_item} href="/vita/catalog">Каталог</a>
             <a className={module.nav_item} href="/vita/tovar">Корзина</a>
-            <a className={module.nav_item} href="/vita/tovar_2">Корзина</a>
+            {/* <a className={module.nav_item} href="/vita/tovar_2">Корзина</a> */}
         </div>
         
     ) : (
